@@ -1,0 +1,80 @@
+Vector field configuration
+------------------------------
+name_vectorfield: CompVFReduced
+idx_strat: 0
+idx_comp: 1
+idx_free: 2
+dim_comp: 1
+dim_free: 2
+dim: 4
+alpha: 0.5
+x1_compressed: 0
+x1_buffer_compress: -1
+x1_decompressed: 3
+x1_buffer_decompress: 4
+x1_free: -3
+x1_free_buffer: -4
+width: 200
+X1_speed: 4.857142857142857
+compression_rate: tensor([25], device='cuda:0')
+
+Data configuration
+------------------------------
+name_data: DatasetSynth
+parameterization: SphereND
+	x0: tensor([-7.,  3.,  0.,  0.], device='cuda:0')
+	r: 1
+	basis: (tensor([1., 0., 0., 0.], device='cuda:0'), tensor([0., 0., 0., 1.], device='cuda:0'), tensor([0., 1., 0., 0.], device='cuda:0'))
+domain: tensor([[ 0.0000,  6.2832],
+        [-1.5708,  1.5708]], device='cuda:0')
+dim_domain: 2
+transformation: Shift
+	x_shift: tensor([17.,  0.,  0.,  0.], device='cuda:0')
+note: training
+sample_mode: uniform
+sample_size: [90, 55]
+
+name_data: DatasetSynth
+parameterization: SphereND
+	x0: tensor([-7.,  3.,  0.,  0.], device='cuda:0')
+	r: 1
+	basis: (tensor([1., 0., 0., 0.], device='cuda:0'), tensor([0., 0., 0., 1.], device='cuda:0'), tensor([0., 1., 0., 0.], device='cuda:0'))
+domain: tensor([[ 0.0000,  6.2832],
+        [-1.5708,  1.5708]], device='cuda:0')
+dim_domain: 2
+transformation: Shift
+	x_shift: tensor([17.,  0.,  0.,  0.], device='cuda:0')
+note: validation
+sample_mode: random
+sample_size: 50
+
+Loss function
+------------------------------
+name_loss: LossLatent
+x_min: 0
+x_max: 3
+weight: 2
+reduction: mean
+
+Additional hyper parameters
+------------------------------
+gpu: 0
+device: cuda
+ode_method: euler
+use_ode_adjoint: True
+use_projected_odeint: True
+rtol: 0.0001
+atol: 1e-05
+start_lr: 0.001
+momentum: 0.3
+lr_end_factor: 0.1
+lr_end_epochs: 5000
+patience: 300
+max_epochs: 30000
+batch_size: 10000
+num_workers: 0
+test_freq: 10
+t_end: 3.5
+test: 0
+time_steps: 500
+

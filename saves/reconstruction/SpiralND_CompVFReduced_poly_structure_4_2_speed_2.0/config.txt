@@ -1,0 +1,90 @@
+Vector field configuration
+------------------------------
+name_vectorfield: CompVFReduced
+idx_strat: 0
+idx_comp: 1
+idx_free: 3
+dim_comp: 2
+dim_free: 1
+dim: 4
+alpha: 0.5
+x1_compressed: 0
+x1_buffer_compress: -1
+x1_decompressed: 1
+x1_buffer_decompress: 2
+x1_free: -3.2424848079681396
+x1_free_buffer: -4.24248480796814
+width: 200
+X1_speed: 15.0
+compression_rate: tensor([25, 25], device='cuda:0')
+
+Data configuration
+------------------------------
+name_data: DatasetSynth
+parameterization: SpiralND
+	x0: tensor([-7.,  6.,  0.,  0.], device='cuda:0')
+	speed_radius: 0.5
+	speed_angle: 2.0
+	phi_0: 0
+	r_min: 1
+	basis: (tensor([0., 0., 0., 1.], device='cuda:0'), tensor([0., 1., 0., 0.], device='cuda:0'))
+domain: tensor([[0.0000, 6.2832]], device='cuda:0')
+dim_domain: 1
+transformation: Shift
+	x_shift: tensor([15.,  0.,  0.,  0.], device='cuda:0')
+note: training
+sample_mode: 1d_uniform_intrinsic
+sample_size: tensor([2300], device='cuda:0')
+
+name_data: DatasetSynth
+parameterization: SpiralND
+	x0: tensor([-7.,  6.,  0.,  0.], device='cuda:0')
+	speed_radius: 0.5
+	speed_angle: 2.0
+	phi_0: 0
+	r_min: 1
+	basis: (tensor([0., 0., 0., 1.], device='cuda:0'), tensor([0., 1., 0., 0.], device='cuda:0'))
+domain: tensor([[0.0000, 6.2832]], device='cuda:0')
+dim_domain: 1
+transformation: Shift
+	x_shift: tensor([15.,  0.,  0.,  0.], device='cuda:0')
+note: validation
+sample_mode: random
+sample_size: tensor(690, device='cuda:0')
+
+Loss function
+------------------------------
+name_loss: LossPreprocessIsometry
+x_min: 0
+x_max: 1
+dim_comp: 2
+dist: <data_lib.DistanceSpiral object at 0x1530e0cf8790>
+x1_pre: -3.2424848079681396
+x_pre_target: 1.0
+weight: 20
+iso_scale: 10.771221417064533
+reduction: mean
+mode: None
+
+Additional hyper parameters
+------------------------------
+gpu: 0
+device: cuda
+ode_method: euler
+use_ode_adjoint: True
+use_projected_odeint: True
+rtol: 0.0001
+atol: 1e-05
+start_lr: 0.001
+momentum: 0.3
+lr_end_factor: 0.5
+lr_end_epochs: 5000
+patience: 300
+max_epochs: 30000
+batch_size: 10000
+num_workers: 0
+test_freq: 10
+t_end: 1
+test: 0
+time_steps: 500
+

@@ -1,0 +1,45 @@
+{
+    "model_architecture": {
+        "width": 512,
+        "num_layers": 2,
+        "num_freqs": 0,
+        "vf_type": "classic",
+        "interpolant": "polynomial",
+        "input_dim": 3,
+        "output_dim": 3
+    },
+    "training": {
+        "epochs": 300,
+        "batch_size": 32,
+        "weight_decay": 1e-06,
+        "optimizer": "adam"
+    },
+    "ode_solver": {
+        "method": "euler",
+        "num_timesteps": 150
+    },
+    "data": {
+        "use_radial_probs": false,
+        "num_labels": 3,
+        "attractor_strength": 50.0,
+        "attractor_scale": 4.0
+    },
+    "reconstruction": {
+        "model_name": "SpiralND_CompVFReduced_poly_structure_4_2_speed_5.0",
+        "latent_dim": 3
+    },
+    "metadata": {
+        "timestamp": "20251001_000000",
+        "save_directory": "/home/turbotage/Documents/GitHub/LearningOnPolyfolds/saves/classification/PaperClassifierAngular/20260209_153200",
+        "gpu_name": "NVIDIA GeForce RTX 4090",
+        "pytorch_version": "2.6.0+cu126"
+    },
+    "performance": {
+        "best_epoch": 0,
+        "best_val_accuracy": 0,
+        "final_train_mse": 0,
+        "final_train_accuracy": 0,
+        "final_val_mse": 0,
+        "final_val_accuracy": 0
+    }
+}
