@@ -98,7 +98,7 @@ and also there to list options
 
 ## References
 
-\[1\] Per Åhag, Alexander Friedrich, Fredrik Ohlsson, Viktor Vigren Näslund, “PolyNODE: Variable-dimension Neural ODEs on M-polyfolds”, Arxiv
+\[1\] Per Åhag, Alexander Friedrich, Fredrik Ohlsson, Viktor Vigren Näslund, “PolyNODE: Variable-dimension Neural ODEs on M-polyfolds”, arXiv:2602.15128 [cs.LG]
 
 \[2\] Ricky T. Q. Chen, “torchdiffeq”, 2018, https://github.com/rtqichen/torchdiffeq,  
  
@@ -110,6 +110,6 @@ If you use this library in your research, please cite as follows:
 	author={Friedrich, Alexander and Vigren Näslund, Viktor},
 	title={polynode},
 	year={2026},
-	url={...},
+	url={https://github.com/turbotage/PolyNODE},
 }
 ```
